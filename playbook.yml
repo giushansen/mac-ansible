@@ -1,0 +1,6 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - lib-setup
+    - app-setup
+    # - configuration
