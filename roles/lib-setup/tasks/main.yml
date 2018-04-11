@@ -1,0 +1,34 @@
+---
+
+- name: Install chruby
+  homebrew:
+    name: chruby
+    state: latest
+
+- name: Install ruby install
+  homebrew:
+    name: ruby-install
+    state: latest
+
+- name: Install ruby 2.4.2
+  command: "ruby-install ruby 2.4.2"
+
+- name: Install node
+  homebrew:
+    name: node
+    state: latest
+
+- name: Install coreutils
+  homebrew:
+    name: coreutils
+    state: latest
+
+- name: Install bash
+  homebrew:
+    name: bash
+    state: latest
+
+- name: Install wget
+  homebrew:
+    name: wget
+    state: latest

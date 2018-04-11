@@ -1,0 +1,41 @@
+---
+
+- name: Install Atom
+  homebrew_cask:
+    name: atom
+    state: present
+
+- name: Install Postgres
+  homebrew_cask:
+    name: postgres
+    state: present
+
+- name: Install Skype
+  homebrew_cask:
+    name: skype
+    state: present
+
+- name: Install ImageOptim
+  homebrew_cask:
+    name: imageoptim
+    state: present
+
+- name: Install LibreOffice
+  homebrew_cask:
+    name: libreoffice
+    state: present
+
+- name: Install Android File Transfer
+  homebrew_cask:
+    name: android-file-transfer
+    state: present
+
+- name: Install Kdiff
+  homebrew_cask:
+    name: kdiff3
+    state: present
+
+- name: Install Transmission
+  homebrew_cask:
+    name: transmission
+    state: present

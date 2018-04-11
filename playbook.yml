@@ -3,4 +3,4 @@
   roles:
     - lib-setup
     - app-setup
-    # - configuration
+    - configuration
