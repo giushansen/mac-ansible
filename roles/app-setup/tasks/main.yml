@@ -25,6 +25,16 @@
     name: skype
     state: present
 
+- name: Install Zoom us
+  homebrew_cask:
+    name: zoomus
+    state: present
+
+- name: Install Slack
+  homebrew_cask:
+    name: slack
+    state: present
+
 - name: Install ImageOptim
   homebrew_cask:
     name: imageoptim
