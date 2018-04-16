@@ -1,0 +1,88 @@
+---
+
+- name: Copy the doftiles repo
+  git:
+    accept_hostkey: yes
+    repo: git@github.com:giushansen/dotfiles.git
+    dest: ~/dotfiles
+    force: yes
+    recursive: no
+
+- name: Make sure the .bashrc file exists
+  file:
+    path: ~/.bashrc
+    state: touch
+
+- name: Load bashrc file into it
+  blockinfile:
+    path: ~/.bashrc
+    block: |
+      if [ -f ~/dotfiles/bashrc ]; then
+        source ~/dotfiles/bashrc
+      fi
+
+- name: Make sure the .bash_profile file exists
+  file:
+    path: ~/.bash_profile
+    state: touch
+
+- name: Load .bashrc file into it
+  blockinfile:
+    path: ~/.bash_profile
+    block: |
+      if [ -f ~/dotfiles/bashrc ]; then
+        source ~/.bashrc
+      fi
+
+- name: Make sure the .profile file exists
+  file:
+    path: ~/.profile
+    state: touch
+
+- name: Load .bashrc file into it
+  blockinfile:
+    path: ~/.bash_profile
+    block: |
+      if [ -f ~/dotfiles/bashrc ]; then
+        source ~/.bashrc
+      fi
+
+- name: Create .gemrc file from copy
+  copy:
+    src: ~/dotfiles/gemrc
+    dest: ~/.gemrc
+
+- name: Create .inputrc file from copy
+  copy:
+    src: ~/dotfiles/inputrc
+    dest: ~/.inputrc
+
+- name: Create .gitconfig file from copy
+  copy:
+    src: ~/dotfiles/gitconfig
+    dest: ~/.gitconfig
+
+- name: Create .gitignore file from copy
+  copy:
+    src: ~/dotfiles/gitignore
+    dest: ~/.gitignore
+
+- name: Create .irbrc file from copy
+  copy:
+    src: ~/dotfiles/irbrc
+    dest: ~/.irbrc
+
+- name: Make sure the ~/.ssh/config file exists
+  file:
+    path: ~/.ssh/config
+    state: touch
+    mode: 0644
+
+- name: Load Host file into it
+  blockinfile:
+    path: ~/.ssh/config
+    block: |
+      Host *
+        AddKeysToAgent yes
+        UseKeychain yes
+        IdentityFile ~/.ssh/id_rsa
