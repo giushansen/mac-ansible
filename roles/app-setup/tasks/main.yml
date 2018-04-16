@@ -1,5 +1,15 @@
 ---
 
+- name: Install iTerm2
+homebrew_cask:
+  name: iterm2
+  state: present
+
+- name: Install Chrome
+homebrew_cask:
+  name: google-chrome
+  state: present
+
 - name: Install Atom
   homebrew_cask:
     name: atom
