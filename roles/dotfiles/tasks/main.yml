@@ -41,7 +41,7 @@
 
 - name: Load .bashrc file into it
   blockinfile:
-    path: ~/.bash_profile
+    path: ~/.profile
     block: |
       if [ -f ~/dotfiles/bashrc ]; then
         source ~/.bashrc
