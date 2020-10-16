@@ -10,8 +10,8 @@
     name: ruby-install
     state: latest
 
-- name: Install ruby 2.4.2
-  command: "ruby-install ruby 2.4.2"
+- name: Install ruby 2.3.1
+  command: "ruby-install ruby 2.3.1"
 
 - name: Install node
   homebrew:
