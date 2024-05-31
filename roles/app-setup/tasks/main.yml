@@ -10,29 +10,14 @@
     name: google-chrome
     state: present
 
-- name: Install Atom
+- name: Install VS Code
   homebrew_cask:
-    name: atom
+    name: visual-studio-code
     state: present
 
 - name: Install Postgres
   homebrew_cask:
     name: postgres
-    state: present
-
-- name: Install Skype
-  homebrew_cask:
-    name: skype
-    state: present
-
-- name: Install Zoom us
-  homebrew_cask:
-    name: zoomus
-    state: present
-
-- name: Install Slack
-  homebrew_cask:
-    name: slack
     state: present
 
 - name: Install ImageOptim
@@ -45,14 +30,9 @@
     name: libreoffice
     state: present
 
-- name: Install Android File Transfer
+- name: Install docker
   homebrew_cask:
-    name: android-file-transfer
-    state: present
-
-- name: Install Kdiff
-  homebrew_cask:
-    name: kdiff3
+    name: docker
     state: present
 
 - name: Install Transmission

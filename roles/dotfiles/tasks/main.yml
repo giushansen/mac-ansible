@@ -3,86 +3,27 @@
 - name: Copy the doftiles repo
   git:
     accept_hostkey: yes
-    repo: git@github.com:giushansen/dotfiles.git
+    repo: git@github.com:giushansen/dotfiles_zsh.git
     dest: ~/dotfiles
     force: yes
     recursive: no
 
-- name: Make sure the .bashrc file exists
+- name: Make sure the .zshrc file exists
   file:
-    path: ~/.bashrc
+    path: ~/.zshrc
     state: touch
 
-- name: Load bashrc file into it
+- name: Load zshrc file into it
   blockinfile:
-    path: ~/.bashrc
+    path: ~/.zshrc
     block: |
-      if [ -f ~/dotfiles/bashrc ]; then
-        source ~/dotfiles/bashrc
+      if [ -f ~/dotfiles_zsh/zshrc ]; then
+        source ~/dotfiles_zsh/zshrc
       fi
 
-- name: Make sure the .bash_profile file exists
+- name: Make sure the .zprofile file exists
   file:
-    path: ~/.bash_profile
+    path: ~/.zprofile
     state: touch
 
-- name: Load .bashrc file into it
-  blockinfile:
-    path: ~/.bash_profile
-    block: |
-      if [ -f ~/dotfiles/bashrc ]; then
-        source ~/.bashrc
-      fi
 
-- name: Make sure the .profile file exists
-  file:
-    path: ~/.profile
-    state: touch
-
-- name: Load .bashrc file into it
-  blockinfile:
-    path: ~/.profile
-    block: |
-      if [ -f ~/dotfiles/bashrc ]; then
-        source ~/.bashrc
-      fi
-
-- name: Create .gemrc file from copy
-  copy:
-    src: ~/dotfiles/gemrc
-    dest: ~/.gemrc
-
-- name: Create .inputrc file from copy
-  copy:
-    src: ~/dotfiles/inputrc
-    dest: ~/.inputrc
-
-- name: Create .gitconfig file from copy
-  copy:
-    src: ~/dotfiles/gitconfig
-    dest: ~/.gitconfig
-
-- name: Create .gitignore file from copy
-  copy:
-    src: ~/dotfiles/gitignore
-    dest: ~/.gitignore
-
-- name: Create .irbrc file from copy
-  copy:
-    src: ~/dotfiles/irbrc
-    dest: ~/.irbrc
-
-- name: Make sure the ~/.ssh/config file exists
-  file:
-    path: ~/.ssh/config
-    state: touch
-    mode: 0644
-
-- name: Load Host file into it
-  blockinfile:
-    path: ~/.ssh/config
-    block: |
-      Host *
-        AddKeysToAgent yes
-        UseKeychain yes
-        IdentityFile ~/.ssh/id_rsa

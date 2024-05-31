@@ -1,17 +1,9 @@
 ---
 
-- name: Install chruby
+- name: Install asdf
   homebrew:
-    name: chruby
+    name: asdf
     state: latest
-
-- name: Install ruby install
-  homebrew:
-    name: ruby-install
-    state: latest
-
-- name: Install ruby 2.4.2
-  command: "ruby-install ruby 2.4.2"
 
 - name: Install node
   homebrew:
