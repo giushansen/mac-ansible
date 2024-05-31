@@ -4,38 +4,46 @@
   homebrew_cask:
     name: iterm2
     state: present
+  ignore_errors: true
 
 - name: Install Chrome
   homebrew_cask:
     name: google-chrome
     state: present
+  ignore_errors: true
 
 - name: Install VS Code
   homebrew_cask:
     name: visual-studio-code
     state: present
+  ignore_errors: true
 
 - name: Install Postgres
   homebrew_cask:
     name: postgres
     state: present
+  ignore_errors: true
 
 - name: Install ImageOptim
   homebrew_cask:
     name: imageoptim
     state: present
+  ignore_errors: true
 
 - name: Install LibreOffice
   homebrew_cask:
     name: libreoffice
     state: present
+  ignore_errors: true
 
 - name: Install docker
   homebrew_cask:
     name: docker
     state: present
+  ignore_errors: true
 
 - name: Install Transmission
   homebrew_cask:
     name: transmission
     state: present
+  ignore_errors: true
