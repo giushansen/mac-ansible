@@ -17,13 +17,11 @@
   blockinfile:
     path: ~/.zshrc
     block: |
-      if [ -f ~/dotfiles_zsh/zshrc ]; then
-        source ~/dotfiles_zsh/zshrc
+      if [ -f ~/dotfiles/zshrc ]; then
+        source ~/dotfiles/zshrc
       fi
 
 - name: Make sure the .zprofile file exists
   file:
     path: ~/.zprofile
     state: touch
-
-
